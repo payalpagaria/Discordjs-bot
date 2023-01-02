@@ -11,5 +11,14 @@ const client = new Client({
 		GatewayIntentBits.GuildMembers,
 	],
 });
-
+client.on("ready",()=>{
+	console.log(client.user.username);
+})
+client.on("messageCreate",(message)=>{
+	if(message.author.bot) return;
+	console.log(`${message.author.tag} => ${message.content}`);
+	if(message.content==="hey"){
+		message.channel.send("hello there")
+	}
+})
 client.login(process.env.DISCORDJS_BOT_TOKEN)
