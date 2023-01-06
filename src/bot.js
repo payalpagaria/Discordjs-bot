@@ -23,7 +23,6 @@ client.on("messageCreate",(message)=>{
 		split(/\s+/); //match all white spaces
 	
 		if(CMD_NAME==='kick'){
-			const member =message.guild.
 			message.channel.send("kicked the user");
 		}
 		else if(CMD_NAME==='ban'){
